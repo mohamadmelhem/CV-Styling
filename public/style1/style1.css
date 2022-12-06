@@ -1,0 +1,198 @@
+body{
+    background-color: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+*{
+    box-sizing: border-box;
+}
+body #wrapper{
+    position: relative;
+    
+}
+body header{
+    background-color: gray;
+    padding:15px 150px;
+    height: 180px;
+}
+body header>div{
+    width: 50%;
+    display: flex;
+    flex-direction: row;
+    justify-content:center;
+    gap: 50px;
+    align-items: center;
+}
+body header hgroup{
+    color: red;
+}
+/* contents (about section )style */
+body #wrapper .content{
+    padding:50px 150px ;
+    display: grid;
+    grid-template-columns: 50% 50%;
+
+
+}
+body #wrapper .content section > h3{
+    border-bottom: 1px solid gray;
+    padding-bottom: 10px; 
+    position: relative;
+    padding-left: 25px;
+}
+body #wrapper .content section > h3::before{
+    content: "";
+    width: 20px;
+    height: 20px;
+    background-color: red;
+    border-radius: 50%;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+.content #about p{
+    padding-right: 20px;
+}
+/* contents (competencies section )style */
+.content #competencies .skill{
+    background-color: gray;
+    padding: 5px;
+    margin-bottom: 5px;
+}
+.content #competencies .skills{
+    margin-bottom: 20px;
+}
+.content #competencies .skills-primary::before{
+    content: "Main";
+}
+.content #competencies .skills-secondary::before{
+    content: "Other";
+}
+.content #competencies .skills span{
+    padding: 5px;
+    display: block;
+    color: white;
+    overflow-x: visible;
+}
+.content #competencies .skills-primary span{
+    background-color: red;
+}
+.content #competencies .skills-secondary span{
+    background-color: rgba(255, 0, 0, 0.50);
+}
+.content #competencies .skill[data-skill="5"] span{
+    width: 50%;
+}
+.content #competencies .skill[data-skill="3"] span{
+    width: 30%;
+}
+.content #competencies .skill[data-skill="1"] span{
+    width: 10%;
+}
+.content #competencies .skill[data-skill="9"] span{
+    width: 90%;
+}
+.content #competencies .skill[data-skill="7"] span{
+    width: 70%;
+}
+/* contents (experiences section )style */
+.content #experiences > div {
+    padding-right: 20px;
+}
+.content h4{
+    margin-bottom: 0;
+}
+.content .experience-type{
+    color: red;
+    
+}
+
+.content .experience-institution{
+    color: rgba(255,0,0,0.75);
+}
+.content .experience-institution::before{
+    content: "@";
+    
+}
+.content .experience-details{
+    color: gray;
+}
+.content .experience-date-separator{
+    color: red;
+}
+/* contact section style */
+#wrapper #contact{
+    position: absolute;
+    top: 15px;
+    right:0;
+    width: 50%;
+    height: 150px;
+    background-color: black;
+}
+#contact h3{
+    display: none;
+}
+#contact .contacts{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    height: 100%;
+}
+
+#contact .contacts dl{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    margin: 0;
+    padding: auto;
+    height: 20%;
+}
+#contact .contacts dl dt{
+    background-color: red;
+    height: 100%;
+    padding: 5px;
+width: 130px;
+color: white;
+}
+#contact .contacts dl dd{
+    height: 100%;
+    /* color: red; */
+    padding: 5px 10px;
+    margin: 0;
+}
+#contact .contacts dl dd a{
+    color: red;
+    text-decoration: none;
+}
+/* start responsive styling */
+@media (max-width:768px){
+    body header{
+        padding:15px;
+        height: auto;
+    }
+    body header>div{
+        width: initial;
+        display: flex;
+        flex-direction: column;
+        gap: 0px;
+        align-items:flex-start;
+    }
+    body #wrapper .content{
+        padding:30px 15px ;
+        display: grid;
+        grid-template-columns: 100%;
+    }
+    .content #about p,
+    .content #experiences > div {
+        padding-right: 0px;
+    }
+    #wrapper #contact{
+        position: relative;
+        background-color: white;
+        width: 100%;
+    }
+    #contact h3{
+        display: block;
+    }
+}
