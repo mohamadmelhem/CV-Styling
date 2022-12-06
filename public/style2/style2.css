@@ -1,0 +1,208 @@
+body{
+    padding: 50px 150px;
+    font-family: Arial, Helvetica, sans-serif;
+    }
+    *{
+        box-sizing: border-box;
+    }
+    header{
+        position: relative;
+    }
+    
+    header div figure{
+        position: absolute;
+        right: 0;
+        top: 0;
+        transform: rotate(-20deg);
+    }
+    
+    header div hgroup h1{
+        padding: 10px 0;
+        border-bottom: solid 1px #eee;
+    }
+    
+    header div hgroup h2{
+        display: none;
+    }
+    
+    .content #about h3 {
+        display: none;
+    
+    }
+    
+    .content #about p {
+        width: 70%;
+        color: gray;
+    }
+    .content #competencies{
+    margin-top: 100px;
+    }
+    #competencies , #experiences ,#education ,#hobbies{
+        display: flex;
+        justify-content: flex-end;
+        flex-wrap: wrap;
+    }
+    
+    #competencies h3, #experiences h3 ,#education h3,#hobbies h3{
+        flex-basis: 130px;
+        margin: 0;
+    }
+    
+    #competencies .skills {
+        display: flex;
+        flex-basis: calc(100% - 130px);
+        border-left: solid 1px black;
+        padding-left:20px ;
+        gap: 30px;
+    
+    }
+    #competencies .skills .skill{
+        min-width: 150px;
+        color: white;
+        margin-bottom: 10px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+    }
+    .content #competencies .skills-primary .skill{
+        background-color: rgb(8, 170, 132);
+        height: 50px;
+    }
+    .content #competencies .skills-secondary .skill{
+        background-color: rgba(8, 170, 132,0.7);
+        height: 40px;
+    }
+    #competencies .skills .skill span{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+    }
+    .content #competencies .skill[data-skill="5"] span::after{
+        content: "✭✭✭";
+    }
+    .content #competencies .skill[data-skill="3"] span::after{
+        content: "✭✭";
+    }
+    .content #competencies .skill[data-skill="1"] span::after{
+        content: "✭";
+    }
+    .content #competencies .skill[data-skill="9"] span::after{
+        content: "✭✭✭✭";
+    }
+    .content #competencies .skill[data-skill="7"] span::after{
+        content: "✭✭✭✭";
+    }
+    
+    /* experiences style */
+    .content .experience-institution{
+        display: none;
+    }
+    .content h4{
+        margin: 0;
+        margin-bottom: 20px;
+        color: rgb(8, 170, 132);
+     
+    }
+    .content .experience-details{
+        
+        position: absolute;
+        right: 0;
+        top: 0;
+    color: gray;
+    }
+    .content #experiences , .content #education , .content #hobbies{
+        margin-top: 50px;
+    }
+    .content #experiences .experience , .content #education .experience , .content #hobbies ul{
+        flex-basis: calc(100% - 130px);
+        border-left: solid 1px black;
+        padding-left:20px ;
+        position: relative;
+    }
+    .content #experiences .experience .experience-description , .content #education .experience .experience-description {
+        margin-bottom: 40px;
+    }
+    #hobbies ul li {
+        margin-left: 30px;
+        
+    }
+    #hobbies ul{
+        padding-bottom: 20px;
+    }
+    #contact h3 , #contact .contacts dl dt , #contact .contacts dl dd{
+    display: none;
+    }
+    .contacts{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    
+    }
+    .contacts .contact-email , .contacts .contact-phone ,.contacts .contact-github ,.contacts .contact-facebook {
+        width: 50px;
+        height: 50px;
+        background-size: cover;
+        margin-right: 10px;
+    }
+    .contacts .contact-email{
+        background-image: url('../images/email.png');
+        
+    }
+    .contacts .contact-phone{
+        background-image: url('../images/phone.png');
+    }
+    
+    .contacts .contact-github{
+        background-image: url('../images/github.png');
+    }
+    .contacts .contact-facebook{
+        background-image: url('../images/facebook.png');
+    }
+    @media (max-width:768px){
+        body{
+            padding: 20px 15px;
+            font-family: Arial, Helvetica, sans-serif;
+            }
+            header div figure{
+    display: none;
+            }
+            .content #about p {
+                width: 100%
+            }
+        .content #competencies{
+            margin-top: 100px;
+            }
+            #competencies , #experiences ,#education ,#hobbies{
+    
+                justify-content: flex-start;
+                flex-direction: column;
+            }
+            
+            #competencies h3, #experiences h3 ,#education h3,#hobbies h3{
+                flex-basis: initial;
+                border-bottom: 1px solid black;
+                display: inline-block;
+                width: max-content;
+                margin-bottom: 20px;
+            }
+            .content #experiences .experience , .content #education .experience , .content #hobbies ul{
+                border-left:none;
+                padding-left:0px ;
+            }
+            #hobbies ul li {
+                margin-left: 20px;
+                
+            }
+            #competencies .skills {
+                display: flex;
+                flex-basis: initial;
+                border-left: 0px;
+                padding-left:  0px; ;
+                gap: 15px;
+            } 
+            #competencies .skills .skill{
+                min-width: 30%;            
+            }       
+    }
